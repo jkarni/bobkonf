@@ -4,6 +4,13 @@
 
 -> verdict <-
 ==============
+
+
+> I always assumed gradual types were to help those poor schmucks using untyped
+> languages to migrate to typed languages. I now realize that I am one of the
+> poor schmucks.
+>   - Philip Wadler, _A Completement to Blame_
+
 ------------------------------------------------------------------------------
 
 -> # The barbarians at the gate
@@ -171,8 +178,16 @@ All of these may be trying to give you a *User*.
 
 ------------------------------------------------------------------------------
 
--> # Do it once
+-> # Do it once (Examples)
 
-## Examples
+-> ## JSON
 
-### JSON
+    test :: ByteString
+    test = [str|
+       { "name": "Julian K. Arni",
+         "age":  -20
+       }
+    |]
+    eitherDecode test :: Either String User
+
+[TODO]
