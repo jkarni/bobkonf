@@ -9,9 +9,15 @@ packages:
 - location:
     git: https://github.com/jkarni/verdict.git
     commit: 02ee854c3bf1bb44388a34bd8ed94f50a6301489
+  subdirs:
+    - verdict
+    - verdict-json
+    - verdict-db
 
 # Packages to be pulled from upstream that are not in the resolver (e.g., acme-missiles-0.3)
-extra-deps: []
+extra-deps:
+- boolean-normal-forms-0.0.0.1
+- cond-0.4.1.1
 
 # Override default flag values for local packages and extra-deps
 flags: {}

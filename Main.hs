@@ -9,3 +9,6 @@ data User = User { name :: String, age :: Age }
 
 jsonEG :: Either String User
 jsonEG = eitherDecode "{ \"name\": \"Julian K. Arni\", \"age\": -20 }"
+
+main :: IO ()
+main = print jsonEG
