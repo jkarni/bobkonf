@@ -289,6 +289,24 @@ More ambitiously:
 -> # As a type
 
 ^
+.                          This part
+.                             vvvv
+   +---------+          +-----------------+ <----+ +-----------+
+   |   CLI   | +------> |                 |        |   DB      |
+   +---------+          |   Your code     | +----> +-----------+
+                        |                 |
+    +----------+ +----> |                 |
+    | Browser  |        +-----------------+
+    +----------+                      ^         +---------+
+                                      |         | Other   |
+                                      +-------+ | service |
+                                                +---------+
+
+------------------------------------------------------------------------------
+
+-> # As a type
+
+^
 
 Types are not just for tagging behaviour (such as deserialization).
 
@@ -395,4 +413,4 @@ Note that information is lost:
 
 -> # As a type
 
-We also get type inference.
+Type inference - getting your compiler to do your job.
