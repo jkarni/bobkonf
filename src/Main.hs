@@ -9,16 +9,19 @@
 {-# LANGUAGE UndecidableInstances   #-}
 module Main where
 
+import           Control.Monad            (replicateM)
 import           Data.Aeson               (FromJSON, ToJSON, eitherDecode)
 import           Data.Aeson.Encode.Pretty (encodePretty)
 import qualified Data.ByteString.Lazy     as BSL
 import           Data.Proxy               (Proxy (..))
 import           Data.Swagger             (Schema, ToSchema, toSchema)
 import           GHC.Generics             (Generic)
+import           Test.QuickCheck          (arbitrary, generate)
 
 import           Verdict
 import           Verdict.DB
 import           Verdict.JSON             ()
+import           Verdict.QuickCheck       ()
 
 -- Datatype definitions {{{---------------------------------------------------
 ------------------------------------------------------------------------------
@@ -57,6 +60,12 @@ jsonSchemaExample = toSchema (Proxy :: Proxy Person)
 jsonSchemaExample' :: IO ()
 jsonSchemaExample'
   = BSL.writeFile "jsonSchemaExample.json" $ encodePretty jsonSchemaExample
+--}}}
+-- QuickCheck {{{-------------------------------------------------------------
+
+arbitraryExample :: IO [Validated (Maximum 100) Integer]
+arbitraryExample = generate $ replicateM 20 arbitrary
+
 --}}}
 -- DB {{{---------------------------------------------------------------------
 
