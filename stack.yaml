@@ -8,11 +8,12 @@ packages:
 - '.'
 - location:
     git: https://github.com/jkarni/verdict.git
-    commit: 02ee854c3bf1bb44388a34bd8ed94f50a6301489
+    commit: 6ddb371f52cde003a6c82cd486c4a323a2fdf5c5
   subdirs:
     - verdict
     - verdict-json
     - verdict-db
+    - verdict-quickcheck
 
 # Packages to be pulled from upstream that are not in the resolver (e.g., acme-missiles-0.3)
 extra-deps:

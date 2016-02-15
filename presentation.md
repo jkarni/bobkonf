@@ -246,7 +246,7 @@ More ambitiously:
 
 ^
     peopleWithAfricanCountryLastName
-       :: [(Person Any (Equals p) Any, Country (Equals p) Any] <- tbl
+       :: [(Person Any (Equals p) Any, Country (Equals p) (Equals "Africa")] <- tbl
 
 ------------------------------------------------------------------------------
 
