@@ -15,7 +15,8 @@
 
 
 
--> https://github.com/jkarni/verdict
+-> Code: https://github.com/jkarni/verdict
+-> This presentation: https://github.com/jkarni/bobkonf
 
 ------------------------------------------------------------------------------
 
