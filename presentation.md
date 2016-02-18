@@ -11,6 +11,12 @@
 > poor schmucks.
 >   - Philip Wadler, _A Completement to Blame_
 
+
+
+
+
+-> https://github.com/jkarni/verdict
+
 ------------------------------------------------------------------------------
 
 -> # The barbarians at the gate
@@ -182,7 +188,7 @@ All of these may be trying to give you a *User*.
 
 -> ## Read
 
-[TODO]
+[Code sample]
 
 ------------------------------------------------------------------------------
 
@@ -190,15 +196,8 @@ All of these may be trying to give you a *User*.
 
 -> ## JSON
 
-    test :: ByteString
-    test = [str|
-       { "name": "Julian K. Arni",
-         "age":  -20
-       }
-    |]
-    eitherDecode test :: Either String User
 
-[TODO]
+[Code sample]
 
 
 
@@ -208,7 +207,7 @@ All of these may be trying to give you a *User*.
 
 -> ## JSON Schema
 
-[TODO]
+[Code sample]
 
 ------------------------------------------------------------------------------
 
@@ -411,6 +410,10 @@ Note that information is lost:
   - And then if the value is not known to be odd or even, the program would not
   typecheck (or would require additional runtime validation).
 
+------------------------------------------------------------------------------
+
 -> # As a type
 
-Type inference - getting your compiler to do your job.
+Type inference.
+
+[Code sample].

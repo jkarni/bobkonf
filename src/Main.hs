@@ -2,9 +2,12 @@
 {-# LANGUAGE DeriveAnyClass         #-}
 {-# LANGUAGE DeriveGeneric          #-}
 {-# LANGUAGE FlexibleInstances      #-}
+{-# LANGUAGE FlexibleContexts       #-}
 {-# LANGUAGE FunctionalDependencies #-}
 {-# LANGUAGE MultiParamTypeClasses  #-}
 {-# LANGUAGE OverloadedStrings      #-}
+{-# LANGUAGE RankNTypes             #-}
+{-# LANGUAGE GADTs                  #-}
 {-# LANGUAGE TypeOperators          #-}
 {-# LANGUAGE UndecidableInstances   #-}
 module Main where
@@ -85,6 +88,13 @@ query3 :: [Validated (Length 7) [Int]]
 query3 = query db
 
 -}
+
+db2 :: DB '[Length 5, Length 3] [Int]
+db2 = insert [1..5] $ insert [1..10] $ insert [1..3] empty
+
+
+query4 :: [Joined [Int] [Int]]
+query4 = crossJoin db db2
 -- }}}
 --}}}-------------------------------------------------------------------------
 
